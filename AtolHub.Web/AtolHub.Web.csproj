@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Copyright></Copyright>
+    <Company></Company>
+    <Authors></Authors>
+    <PackageProjectUrl></PackageProjectUrl>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <PreserveCompilationReferences>false</PreserveCompilationReferences>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <UserSecretsId>56bc025b-c817-4fbc-898b-6145cb409f27</UserSecretsId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="App_Data\**" CopyToPublishDirectory="PreserveNewest" Exclude="App_Data\appsettings.json" />
+    <Content Include="logs\**" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="PublishViews" BeforeTargets="PrepareForPublish">
+  </Target>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Validators\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AtolHub.Core\AtolHub.Core.csproj" />
+    <ProjectReference Include="..\AtolHub.Framework\AtolHub.Framework.csproj" />
+  </ItemGroup> 
+</Project>
